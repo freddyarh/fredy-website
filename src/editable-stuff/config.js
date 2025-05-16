@@ -8,7 +8,7 @@ const mainBody = {
   gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
   firstName: "Hi,",
   middleName: "",
-  lastName: "I'm Fredy Aristizabal",
+  lastName: "I'm Fredy Lopez",
   message: " Passionate about changing the world with technology. ",
   icons: [
     {
