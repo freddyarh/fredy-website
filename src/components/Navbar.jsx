@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
+import "./Navbar.css";
 
 const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true);
@@ -57,8 +58,8 @@ const Navigation = React.forwardRef((props, ref) => {
             </NavLink>
           )}
           {repos.show && (
-
             <NavLink
+              className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#projects"}
             >
               Projects
