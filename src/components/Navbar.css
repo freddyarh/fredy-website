@@ -1,0 +1,30 @@
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  padding: 6px 0;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #00000087;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-item:hover {
+  color: #00000087;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Remove the duplicate styles for navbar-nav a since we're using nav-item class consistently */
