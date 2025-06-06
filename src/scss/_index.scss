@@ -127,6 +127,7 @@ code {
   @extend .progress;
   & > * {
     animation: progress 1.5s ease-in-out forwards;
+    background-color: #a0bfec;
   }
 }
 
