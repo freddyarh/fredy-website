@@ -35,10 +35,10 @@ const MainBody = React.forwardRef(
             
           <div className="display-6">
           <Typist key={loopKey} typingDelay={100} cursor={<span className='cursor'>|</span>}>
-            Frontend Developer
-            <Typist.Backspace count={18} />
+            Full Stack Developer
+            <Typist.Backspace count={20} />
             <Typist.Delay ms={1500} />
-            Backend Developer
+            Web Developer
             <Typist.Backspace count={17} />
             <Typist.Delay ms={1500} />
             Mobile Developer
