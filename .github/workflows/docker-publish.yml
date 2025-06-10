@@ -28,17 +28,17 @@ jobs:
           minor_pattern: "feat:"
           format: "${major}.${minor}.${patch}-prerelease${increment}"
         id: version
+      
+      - name: Set Version Environment Variable
+        run: echo "VERSION=${{ steps.version.outputs.version }}" >> $GITHUB_ENV
 
       - name: Docker Login
         env:
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           NEW_VERSION: ${{ env.VERSION }}
         run: |
-          echo "Starting login"
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-          echo "New version: $NEW_VERSION"
-          echo "End login"
 
       - name: Build Docker Image
         env:
