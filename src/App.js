@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   navBar,
@@ -24,54 +24,108 @@ import Leadership from "./components/home/Leadership.jsx";
 import Experience from "./components/home/Experience";
 
 const Home = React.forwardRef((props, ref) => {
+  const parentRef = useRef();
+
+  useEffect(() => {
+    if(!parentRef.current){
+      return;
+    }
+
+    const options = {
+      root: parentRef.current,
+      rootMargin: '0px',
+      threshold: 0.28
+    }
+
+          const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        })
+      }, options)
+
+    const elements = document.querySelectorAll('.section-1');
+    elements.forEach(element => {
+      observer.observe(element)
+    })
+
+    return () => {
+      observer.disconnect();
+    } 
+  }, []);
   return (
-    <>
-      <MainBody
-        gradient={mainBody.gradientColors}
-        title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
-        message={mainBody.message}
-        icons={mainBody.icons}
-        ref={ref}
-      />
-      {about.show && (
-        <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
+    <div ref={parentRef} className="parent" >
+      <div className="section-1">
+        <MainBody
+          gradient={mainBody.gradientColors}
+          title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
+          message={mainBody.message}
+          icons={mainBody.icons}
+          ref={ref}
         />
-      )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
-      )}
-      {leadership.show && (
-        <Leadership
-          heading={leadership.heading}
-          message={leadership.message}
-          img={leadership.images}
-          imageSize={leadership.imageSize}
-        />
-      )}
-      {skills.show && (
-        <Skills
-          heading={skills.heading}
-          hardSkills={skills.hardSkills}
-          softSkills={skills.softSkills}
-        />
-      )}
-      
-    </>
+      </div>
+      <div className="section-1">
+        {about.show && (
+          <AboutMe
+            heading={about.heading}
+            message={about.message}
+            link={about.imageLink}
+            imgSize={about.imageSize}
+            resume={about.resume}
+          />
+        )}
+      </div>
+      <div className="section-1">
+        {
+          experiences.show && (
+            <Experience experiences={experiences}/>
+          )
+        }
+      </div>
+      <div className="section-1">
+        {repos.show && (
+          <Project
+            heading={repos.heading}
+            username={repos.gitHubUsername}
+            length={repos.reposLength}
+            specfic={repos.specificRepos}
+          />
+        )}
+      </div>
+      <div className="section-1">
+        {leadership.show && (
+          <Leadership
+            heading={leadership.heading}
+            message={leadership.message}
+            img={leadership.images}
+            imageSize={leadership.imageSize}
+          />
+        )}
+      </div>
+      <div className="section-1">
+        {skills.show && (
+          <Skills
+            heading={skills.heading}
+            hardSkills={skills.hardSkills}
+            softSkills={skills.softSkills}
+          />
+        )}
+      </div>
+      <div className="section-1">
+      <Footer>
+        {getInTouch.show && (
+          <GetInTouch
+            heading={getInTouch.heading}
+            message={getInTouch.message}
+            email={getInTouch.email}
+          />
+        )}
+      </Footer>
+      </div>
+    </div>
   );
 });
 
@@ -86,7 +140,7 @@ const App = () => {
       </Routes>
       {/* {false && <Route path="/blog" exact component={Blog} />}
       {false && <Route path="/blog/:id" component={BlogPost} />} */}
-      <Footer>
+      {/* <Footer>
         {getInTouch.show && (
           <GetInTouch
             heading={getInTouch.heading}
@@ -94,7 +148,7 @@ const App = () => {
             email={getInTouch.email}
           />
         )}
-      </Footer>
+      </Footer> */}
     </BrowserRouter>
   );
 };
