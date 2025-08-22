@@ -1,0 +1,53 @@
+@media only screen and (min-width: 1140px) {
+  .face .designer-img {
+    background-position: 0px -600px;
+    left: 100px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .face .coder-img {
+    background-position: 100% 0px;
+    right: 100px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .face .designer-bg {
+    left: 100px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .face .coder-bg {
+    right: 100px;
+    background-position: 100% -1300px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .face .designer-img,
+  .face .coder-img {
+    width: 420px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    background: url(https://www.adhamdannaway.com/wp-content/themes/dannaway/images/sprite-home.png)
+      0 0 no-repeat;
+    display: block;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .face .designer-bg,
+  .face .coder-bg {
+    width: 420px;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    background: url(https://www.adhamdannaway.com/wp-content/themes/dannaway/images/sprite-home.png)
+      0 -1300px no-repeat;
+    display: block;
+  }
+}

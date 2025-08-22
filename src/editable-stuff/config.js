@@ -104,8 +104,8 @@ const skills = {
     { name: "Node JS", value: 80 },
     { name: "Express", value: 75 },
     { name: "JavaScript", value: 90 },
-    { name: "HTML/CSS", value: 55 },
-    { name: "MongoDB", value: 65 },
+    { name: "HTML/CSS", value: 80 },
+    { name: "MongoDB", value: 70 },
     { name: "SQL", value: 75 },
   ],
   softSkills: [

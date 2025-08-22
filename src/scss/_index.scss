@@ -135,6 +135,23 @@ code {
   font-family: 'Dancing Script', cursive; /* Use the imported Dancing Script font */
 }
 
+.parent {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  overflow: auto;
+
+  .section-1 {
+    opacity: 0.3;
+    transition: 800ms;
+    height: auto;
+  }
+  .section-1.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @media only screen and (max-width: 540px) {
   .logo {
     width: 80%;
