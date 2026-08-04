@@ -2,9 +2,13 @@
   position: relative;
   margin: 0 15px;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-text);
   transition: all 0.3s ease;
   padding: 6px 0;
+}
+
+.nav-item:hover {
+  color: var(--color-accent);
 }
 
 .nav-item::after {
@@ -30,5 +34,3 @@
 .nav-contact-link::after {
   display: none;
 }
-
-/* Remove the duplicate styles for navbar-nav a since we're using nav-item class consistently */

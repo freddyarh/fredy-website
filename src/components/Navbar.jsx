@@ -34,8 +34,7 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-white"
-        }`}
+      className="px-3 fixed-top navbar-dark navbar-white"
       expand="lg"
     >
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler navbar-dark" />

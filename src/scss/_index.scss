@@ -51,17 +51,35 @@ code {
   transition: background-color 0.2s;
 }
 .navbar-white {
-  background-color: rgba(15, 17, 23, 0.88);
+  background-color: rgba(15, 17, 23, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   transition: background-color 0.2s;
+
+  .navbar-nav .nav-link {
+    color: var(--color-text) !important;
+    padding: 0.5rem 0.75rem;
+
+    &:hover,
+    &:focus {
+      color: var(--color-accent) !important;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: var(--color-border);
+  }
+
+  .navbar-toggler-icon {
+    filter: brightness(1.2);
+  }
 }
 .brand {
   color: var(--color-text) !important;
 }
 .nav-item {
   transition: color 0.2s;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 .nav-item:hover {
   color: var(--color-accent) !important;
@@ -443,6 +461,14 @@ code {
 @media only screen and (max-width: 991px) {
   .navbar-collapse-custom {
     padding: 1rem 0 0.5rem;
+    background-color: rgba(15, 17, 23, 0.98);
+    border-radius: 0 0 0.75rem 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .navbar-white .navbar-nav .nav-link {
+    color: var(--color-text) !important;
+    font-size: 1.1rem;
   }
 
   .navbar-nav {
