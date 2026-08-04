@@ -34,8 +34,8 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
 
 
   return (
-    <Jumbotron id="aboutme" className="m-0">
-      <div className="container w-auto row">
+    <Jumbotron id="aboutme" className="m-0 section-surface py-4 py-md-5">
+      <div className="container w-auto row px-3 px-md-4">
         <div className="col-lg-5 text-center mb-5 mb-lg-0 col-sm-12 d-lg-block align-self-center">
           {showPic && (
             <img
@@ -53,7 +53,7 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
           {resume && (
             <p className="lead text-center">
               <a
-                className="btn btn-outline-dark btn-lg"
+                className="btn btn-accent-outline btn-lg"
                 href={resume}
                 target="_blank"
                 rel="noreferrer noopener"

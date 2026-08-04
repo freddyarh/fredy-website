@@ -55,9 +55,9 @@ const Project = ({ heading, username, length, specfic }) => {
   }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className="bg-light m-0">
+    <Jumbotron fluid id="projects" className="section-dark m-0 py-5">
       <Container className="">
-        <h2 className="display-4 pb-5 text-center">{heading}</h2>
+        <h2 className="display-4 pb-5 text-center section-title section-title--visible">{heading}</h2>
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (
@@ -65,6 +65,7 @@ const Project = ({ heading, username, length, specfic }) => {
                 key={`project-card-${index}`}
                 id={`project-card-${index}`}
                 value={project}
+                index={index}
               />
             ))
             : dummyProjectsArr.map((project, index) => (
@@ -72,6 +73,7 @@ const Project = ({ heading, username, length, specfic }) => {
                 key={`dummy-${index}`}
                 id={`dummy-${index}`}
                 value={project}
+                index={index}
               />
             ))}
         </Row>

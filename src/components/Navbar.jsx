@@ -3,7 +3,7 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { repos, about, skills } from "../editable-stuff/config.js";
+import { repos, about, skills, getInTouch } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 import "./Navbar.css";
 
@@ -38,12 +38,12 @@ const Navigation = React.forwardRef((props, ref) => {
         }`}
       expand="lg"
     >
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-      <Navbar.Collapse className="d-lg-flex justify-content-lg-center" id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler navbar-dark" />
+      <Navbar.Collapse className="d-lg-flex justify-content-lg-center navbar-collapse-custom" id="basic-navbar-nav">
       <Navbar.Brand className="navbar-brand dancing-script" href={process.env.PUBLIC_URL + "/#home"}>
         {``}
       </Navbar.Brand>
-        <Nav className="navbar-nav mr-auto">
+        <Nav className="navbar-nav mr-auto align-items-lg-center">
           {/* {
             <NavLink className="nav-item lead">
               <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
@@ -72,6 +72,18 @@ const Navigation = React.forwardRef((props, ref) => {
               href={process.env.PUBLIC_URL + "/#skills"}
             >
               Skills
+            </NavLink>
+          )}
+          {getInTouch.show && getInTouch.navButton?.show !== false && (
+            <NavLink
+              className={`nav-item lead ${
+                getInTouch.navButton?.style === "link"
+                  ? "nav-contact-link"
+                  : "nav-contact-btn"
+              }`}
+              href={process.env.PUBLIC_URL + "/#getintouch"}
+            >
+              {getInTouch.navButton?.label || "Contact"}
             </NavLink>
           )}
         </Nav>

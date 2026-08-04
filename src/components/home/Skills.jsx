@@ -20,8 +20,8 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
     skillsTabRef
   );
   return (
-    <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
-      <Container className="p-5 ">
+    <Jumbotron ref={skillsTabRef} fluid className="section-dark m-0 py-4 py-md-5" id="skills">
+      <Container className="p-3 p-md-5">
         <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
           {heading}
         </h2>

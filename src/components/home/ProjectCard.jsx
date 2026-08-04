@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-const ProjectCard = ({ value }) => {
+const ProjectCard = ({ value, index = 0 }) => {
   const {
     name,
     description,
@@ -14,8 +14,8 @@ const ProjectCard = ({ value }) => {
     pushed_at,
   } = value;
   return (
-    <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
+    <Col xs={12} lg={6} className="project-card project-card--visible" style={{ transitionDelay: `${index * 100}ms` }}>
+      <Card className="card shadow-lg p-3 mb-5 rounded">
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
@@ -39,14 +39,14 @@ const ProjectCard = ({ value }) => {
 
 const CardButtons = ({ svn_url }) => {
   return (
-    <div className="d-grid gap-2 d-md-block">
+    <div className="d-grid gap-2 d-md-block project-card-actions">
       <a
         href={`${svn_url}/archive/master.zip`}
-        className="btn btn-outline-secondary mx-2"
+        className="btn btn-accent-outline"
       >
         <i className="fab fa-github" /> Clone Project
       </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
+      <a href={svn_url} target="_blank" rel="noopener noreferrer" className="btn btn-accent-outline">
         <i className="fab fa-github" /> Repo
       </a>
     </div>
@@ -88,7 +88,7 @@ const Language = ({ languages_url, repo_url }) => {
             target=" _blank"
             rel="noopener noreferrer"
           >
-            <span className="badge bg-light text-dark">
+            <span className="badge lang-badge">
               {language}:{" "}
               {Math.trunc((data[language] / total_count) * 1000) / 10} %
             </span>
@@ -129,11 +129,12 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
       <a
         href={repo_url + "/stargazers"}
         target=" _blank"
-        className="text-dark text-decoration-none"
+        className="text-decoration-none"
+        style={{ color: "var(--color-text-muted)" }}
       >
-        <span className="text-dark card-link mr-4">
+        <span className="card-link mr-4" style={{ color: "var(--color-text-muted)" }}>
           <i className="fab fa-github" /> Stars{" "}
-          <span className="badge badge-dark">{star_count}</span>
+          <span className="badge" style={{ backgroundColor: "var(--color-accent)", color: "var(--color-base)" }}>{star_count}</span>
         </span>
       </a>
       <small className="text-muted">Updated {updated_at}</small>

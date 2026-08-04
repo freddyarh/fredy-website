@@ -5,7 +5,7 @@ const navBar = {
 
 // Main Body SECTION
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
+  gradientColors: "#0F1117, #1A1D26, #22D3EE33, #A78BFA22, #1A1D26",
   firstName: "Hi,",
   middleName: "",
   lastName: "I'm Fredy Aristizabal",
@@ -127,6 +127,18 @@ const getInTouch = {
   message:
     "I'm currently looking for full-time Software Engineering opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
   email: "freddyarh13@gmail.com",
+  // Contact button preferences — edit these to customize behavior
+  navButton: {
+    show: true,
+    label: "Contact",
+    style: "pill", // "pill" | "link"
+  },
+  floating: {
+    show: true,
+    style: "fab", // "fab" = single email button | "icons" = GitHub/LinkedIn/Email row
+    primaryAction: "email", // "email" opens mailto | "section" scrolls to Get In Touch
+    label: "Email me",
+  },
 };
 
 const experiences = {

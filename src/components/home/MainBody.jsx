@@ -28,12 +28,12 @@ const MainBody = React.forwardRef(
       >
         <div id="stars"></div>
         <Container className="text-center">
-          <img src={laptopCodeImage} alt="Description of SVG" className="svg-image" style={{ width: '150px', height: 'auto' }}/>
-          <h1 ref={ref} className="display-4"  style={{ fontWeight: 500 }}>
+          <img src={laptopCodeImage} alt="Description of SVG" className="svg-image hero-logo"/>
+          <h1 ref={ref} className="display-4 hero-title" style={{ fontWeight: 500 }}>
             {title}
           </h1>
             
-          <div className="display-6">
+          <div className="display-6 hero-subtitle">
           <Typist key={loopKey} typingDelay={100} cursor={<span className='cursor'>|</span>}>
             Full Stack Developer
             <Typist.Backspace count={20} />
@@ -46,7 +46,7 @@ const MainBody = React.forwardRef(
             <Typist.Delay ms={1500} />
           </Typist>
           </div>
-          <div className="p-5">
+          <div className="hero-socials">
             {icons.map((icon, index) => (
               <a
                 key={`social-icon-${index}`}
@@ -55,7 +55,7 @@ const MainBody = React.forwardRef(
                 href={icon.url}
                 aria-label={`My ${icon.image.split("-")[1]}`}
               >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
+                <i className={`fab ${icon.image} socialicons hero-social-icon`} />
               </a>
             ))}
           </div>
