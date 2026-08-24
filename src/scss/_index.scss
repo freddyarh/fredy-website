@@ -84,17 +84,17 @@ code {
 .nav-item:hover {
   color: var(--color-accent) !important;
 }
-.nav-contact-btn {
+.nav-item.nav-contact-btn {
   border: 1px solid var(--color-accent) !important;
   color: var(--color-accent) !important;
   border-radius: 999px;
   padding: 0.35rem 1rem !important;
   margin-left: 0.5rem;
-  transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
   white-space: nowrap;
   &:hover {
-    background-color: var(--color-accent) !important;
-    color: var(--color-base) !important;
+    background-color: color-mix(in srgb, var(--color-accent) 55%, transparent) !important;
+    color: var(--color-text) !important;
   }
 }
 
